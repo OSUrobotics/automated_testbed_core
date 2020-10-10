@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Grasp_Reset_Hardware_Test">
+
+	<executable package_path="grasp_reset_flexbe_behaviors.grasp_reset_hardware_test_sm" class="Grasp_Reset_Hardware_TestSM" />
+	<tagstring></tagstring>
+	<author>Keegan Nave</author>
+	<date>Fri Sep 18 2020</date>
+	<description>
+		Tests the hardware and flexbe connection only.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+	<contains name="Test_Control_Behavior_GR" />
+	<contains name="Trial_Control_Behavior_GR" />
+	<contains name="Reset_Control_Behavior_GR" />
+
+	<!-- Available Parameters -->
+
+</behavior>

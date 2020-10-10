@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Door_Hardware_Test">
+
+	<executable package_path="door_flexbe_behaviors.door_hardware_test_sm" class="Door_Hardware_TestSM" />
+	<tagstring></tagstring>
+	<author>Keegan Nave</author>
+	<date>Fri Sep 18 2020</date>
+	<description>
+		Tests the hardware and flexbe connection only for any number of trials and tests.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+	<params>
+
+		<param type="numeric" name="number_of_trials" default="1" label="number_of_trials" hint="Sets the number_of_trials">
+			<min value="1" />
+			<max value="100" />
+		</param>
+
+		<param type="numeric" name="number_of_tests" default="1" label="number_of_tests" hint="Sets the number_of_tests">
+			<min value="1" />
+			<max value="100" />
+		</param>
+
+		<param type="text" name="pub_reset_topic" default="reset_start" label="pub_reset_topic" hint="Sets the pub_reset_topic" />
+
+		<param type="text" name="sub_reset_topic" default="reset_complete" label="sub_reset_topic" hint="Sets the sub_reset_topic" />
+
+		<param type="numeric" name="pub_reset_int" default="1" label="pub_reset_int" hint="Sets the pub_reset_int">
+			<min value="0" />
+			<max value="100" />
+		</param>
+
+		<param type="text" name="start_data_topic" default="start_collection" label="start_data_topic" hint="Sets the start_data_topic" />
+
+		<param type="numeric" name="data_int" default="1" label="data_int" hint="Sets the data_int">
+			<min value="0" />
+			<max value="1" />
+		</param>
+
+	</params>
+
+
+</behavior>

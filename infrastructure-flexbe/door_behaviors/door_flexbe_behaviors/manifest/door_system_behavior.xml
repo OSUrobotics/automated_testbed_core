@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Door_System_Behavior">
+
+	<executable package_path="door_flexbe_behaviors.door_system_behavior_sm" class="Door_System_BehaviorSM" />
+	<tagstring></tagstring>
+	<author>Keegan Nave</author>
+	<date>Fri Sep 18 2020</date>
+	<description>
+		Use to run the arm and door at the same time, waits for reply from single_stage_as in the hardware_flexbe_link package
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+	<params>
+
+		<param type="numeric" name="number_of_trials" default="1" label="number_of_trials" hint="Sets the number_of_trials">
+			<min value="1" />
+			<max value="100" />
+		</param>
+
+		<param type="numeric" name="number_of_tests" default="1" label="number_of_tests" hint="Sets the number_of_tests">
+			<min value="1" />
+			<max value="100" />
+		</param>
+
+		<param type="text" name="pub_reset_topic" default="reset_start" label="pub_reset_topic" hint="Sets the pub_reset_topic" />
+
+		<param type="text" name="sub_reset_topic" default="reset_complete" label="sub_reset_topic" hint="Sets the sub_reset_topic" />
+
+		<param type="numeric" name="pub_reset_int" default="1" label="pub_reset_int" hint="Sets the pub_reset_int">
+			<min value="0" />
+			<max value="100" />
+		</param>
+
+		<param type="text" name="start_data_topic" default="start_collection" label="start_data_topic" hint="Sets the start_data_topic" />
+
+		<param type="numeric" name="data_int" default="1" label="data_int" hint="Sets the data_int">
+			<min value="0" />
+			<max value="1" />
+		</param>
+
+		<param type="text" name="action_server_topic" default="single_stage_as" label="action_server_topic" hint="Sets the action_server_topic" />
+
+		<param type="text" name="data_collection_server_topic" default="data_collection_as" label="data_collection_server_topic" hint="Sets the data_collection_server_topic" />
+
+	</params>
+
+
+</behavior>
