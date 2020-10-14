@@ -25,6 +25,14 @@ output="screen"
 />
 
 <node
+name="single_stage_as_py"
+pkg="hardware_flexbe_link"
+type="single_stage_as_py.py"
+output="screen"
+/>
+
+
+<node
 name="data_collection_as"
 pkg="data_collection"
 type="data_collection_as"
