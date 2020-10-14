@@ -8,7 +8,7 @@
 
 1. Create a ROS workspace and name it infrastructure system 
 ```
-mkdir -p ~/infrastructure/src
+mkdir -p ~/infrastructure_system/src
 cd ~/catkin_ws/
 catkin build
 ```
@@ -57,7 +57,7 @@ After running the launch file FlexBe will pop up to use the testbed or door:
 Load Behavior->Door_System_Behavior->Runtime Control->Change number of tests and trials to whatever youd like->Start Execution
 
 #### Testbed
-Load Behavior->Grasp_Reset_System_Behavior_Single->Runtime Control->Change number of tests and trials to whatever youd like->Start Execution
+Load Behavior->Grasp_Reset_System_Behavior_Single->Runtime Control->Change number of tests and trials to whatever youd like(If you want the python action server make sure to change the topic from single_stage_as to: single_stage_as_py)->Start Execution
 
 
 The other Behaviors and states can be used as templates or testing/debugging tools but will require some tinkering.
