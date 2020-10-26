@@ -9,7 +9,7 @@
 1. Create a ROS workspace and name it infrastructure system 
 ```
 mkdir -p ~/infrastructure_system/src
-cd ~/catkin_ws/
+cd ~/infrastructure_system/
 catkin build
 ```
 2. Install FlexBE Binaries and clone the app to your src folder
