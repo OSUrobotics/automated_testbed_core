@@ -19,7 +19,7 @@ class SingleStageActionServer(object):
 			self._as.set_preempted()
 
 		if goal.stage_start == True:
-			self._result.stage_result = True
+			self._result.result = True
 
 
 
@@ -36,7 +36,7 @@ class SingleStageActionServer(object):
 			self._as.set_succeeded(self._result)
 
 		else:
-			self._result.stage_result = False
+			self._result.result = False
 			rospy.loginfo('Failed') 
 			self._as.set_succeeded(self._result)
 

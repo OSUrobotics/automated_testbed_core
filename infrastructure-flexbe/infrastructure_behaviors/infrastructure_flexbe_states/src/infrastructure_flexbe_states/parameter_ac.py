@@ -3,12 +3,12 @@ from flexbe_core import EventState, Logger
 from flexbe_core.proxy import ProxyActionClient
 
 # example import of required action
-from infrastructure_msgs.msg import StageAction, StageGoal
+from infrastructure_msgs.msg import TestParametersAction, TestParametersGoal
 
 
-class StageActionClient(EventState):
+class ParameterActionClient(EventState):
     '''
-    stage_ac_state is an action client state that will make a call to an action server.
+    parameter_ac is an action client state that will make a call to an action server.
     This is intended to serve as a template for future states that need to communicate with 
     action server. The topic given should correspond to an action server and it right now only 
     works for StageAction action messages but in the future it will have any custom messages needed
@@ -24,10 +24,10 @@ class StageActionClient(EventState):
 
     def __init__(self, topic):
         # See example_state.py for basic explanations.
-        super(StageActionClient, self).__init__(outcomes = ['completed', 'failed'])
+        super(ParameterActionClient, self).__init__(outcomes = ['completed', 'failed'])
 
         self._topic = topic
-        self._client = ProxyActionClient({self._topic: StageAction})
+        self._client = ProxyActionClient({self._topic: TestParametersAction})
 
 		# It may happen that the action client fails to send the action goal.
         self._error = False
@@ -51,9 +51,9 @@ class StageActionClient(EventState):
 
 
     def on_enter(self, userdata):
-        #Creating the goal to send
-        goal = StageGoal()
-        goal.start = 0
+        #Creating the goal to send for testing
+        goal = TestParametersGoal()
+        goal.parameters = [1,2,3]
 
         #error checking in case communication cant be established
         try:

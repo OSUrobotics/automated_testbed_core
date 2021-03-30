@@ -31,19 +31,19 @@ class SingleStageActionServer{
         		as_.setPreempted();
       		}
 
-			if(goal->stage_start == true){	
+			if(goal->start == true){	
 				//ENTER YOUR CODE HERE 
 
 
 
 				ROS_INFO("SUCCESS");
-				result_.stage_result = true;
+				result_.result = true;
 				as_.setSucceeded(result_);
 			}
 			//placeholder for testing purposes
 			else{
 				ROS_INFO("FAILED");
-				result_.stage_result = false;
+				result_.result = false;
 				as_.setSucceeded(result_);
 			}
 		}

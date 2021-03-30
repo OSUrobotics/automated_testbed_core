@@ -1,5 +1,5 @@
 #goal
-int32 start
+float32[] parameters
 ---
 #result
 int32 result
