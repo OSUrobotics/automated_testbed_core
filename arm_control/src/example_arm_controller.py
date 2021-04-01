@@ -21,7 +21,6 @@ class ExampleArmController():
 
 
 		time.sleep(3)
-		print("MADE IT 6")
 		self.start_arm.set_succeeded(StageResult(result = 0), text="SUCCESS")
 
 

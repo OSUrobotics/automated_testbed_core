@@ -28,8 +28,6 @@ class DataCollection():
 		self.video_path = os.path.split(self.video_path)[0] + "/stored_data/recorded_video/"
 		name_parameter = rospy.get_param("test_name", "infrastructure_trial_")
 		record_parameter = rospy.get_param("record_video", False) 
-		print(name_parameter)
-		print(record_parameter)
 
 		if(record_parameter == True):
 			while(not rospy.is_shutdown()):
@@ -63,7 +61,6 @@ class DataCollection():
 
 		self.collection_flag = True
 		self.trial_count += 1
-		print("MADE IT")
 		time.sleep(5)
 		self.start_collection.set_succeeded(StageResult(result = 0), text="SUCCESS")
 			
@@ -76,7 +73,6 @@ class DataCollection():
 			return
 		
 		self.collection_flag = False
-		print("MADE IT 2")
 		time.sleep(5)
 		self.stop_collection.set_succeeded(StageResult(result = 0), text="SUCCESS")
   

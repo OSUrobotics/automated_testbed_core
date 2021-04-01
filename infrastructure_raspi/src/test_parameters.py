@@ -17,8 +17,6 @@ class TestParameters():
 		#ANY CHECKS FOR PARAMETERS AND EXECUTION OF PARAMETERS ON HARDWARE HERE
 		self.test_parameters.publish_feedback(TestParametersFeedback(status="EXAMPLE: CHANGED OBJECT"))
 
-
-		print("MADE IT 3")
 		self.test_parameters.set_succeeded(TestParametersResult(result=0), text="SUCCESS")
 		#Or if failed:
 		#self.test_parameters.set_aborted(TestParameters(result = 100), text="FAILED")

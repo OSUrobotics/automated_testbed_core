@@ -16,8 +16,6 @@ class Reset():
 
 		###ALL HARDWARE RELATED CODE GOES HERE
 		self.start_reset.publish_feedback(StageFeedback(status="EXAMPLE: WINDING OBJECT IN"))
-
-		print("MADE IT 4")
 		self.start_reset.set_succeeded(StageResult(result = 0), text="SUCCESS")
 
 
