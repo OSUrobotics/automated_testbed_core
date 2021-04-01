@@ -1,0 +1,30 @@
+<launch>
+
+<arg name="use_hardware" default="false"/>
+<arg name="collect_data" default="false"/>
+<arg name="video" default="false"/>
+<arg name="name" default = "infrastructure_trial"/>
+
+<param name="test_name" type="string" value="$(arg name)" />
+<param name="record_video" type="boolean" value="$(arg video)" />
+
+
+<include file="$(find flexbe_onboard)/launch/behavior_onboard.launch" />
+<include file="$(find flexbe_app)/launch/flexbe_ocs.launch">
+	<arg name = "no_app" value = "false"/>
+</include>
+
+
+
+<node pkg="rosbag" type="record" name="rosbag_record_sensors"
+       args="record -o $(find data_collection)/stored_data/rosbags/$(arg test_name) -e '(.*)_infsensor'" if="$(arg collect_data)"/>  
+
+<node pkg="data_collection" name="data_collection" type="data_collection.py" output="screen"/>
+<node pkg="infrastructure_raspi" name="reset" type="reset.py" output="screen"/>
+<node pkg="infrastructure_raspi" name="test_parameters" type="test_parameters.py" output="screen"/>
+<node pkg="arm_control" name="example_arm_controller" type="example_arm_controller.py" output="screen"/>
+
+
+
+</launch>
+

@@ -39,6 +39,7 @@ class System_Behaviour_PiSM(Behavior):
 		self.add_parameter('parameter_topic', 'set_test_parameters')
 		self.add_parameter('reset_topic', 'reset_hardware')
 		self.add_parameter('stop_data_collection_topic', 'stop_data_collection')
+		self.add_parameter('arm_control_topic', 'start_arm_sequence')
 
 		# references to used behaviors
 
@@ -72,7 +73,7 @@ class System_Behaviour_PiSM(Behavior):
 			# x:800 y:212
 			OperatableStateMachine.add('Set Test Parameters',
 										ParameterActionClient(topic=self.parameter_topic),
-										transitions={'completed': 'Reset', 'failed': 'failed'},
+										transitions={'completed': 'User Arm Control', 'failed': 'failed'},
 										autonomy={'completed': Autonomy.Off, 'failed': Autonomy.Off})
 
 			# x:562 y:122
@@ -93,6 +94,12 @@ class System_Behaviour_PiSM(Behavior):
 										transitions={'continue': 'Start Data Collection', 'failed': 'failed', 'completed': 'Test Control'},
 										autonomy={'continue': Autonomy.Off, 'failed': Autonomy.Off, 'completed': Autonomy.Off},
 										remapping={'number_of_trials': 'number_of_trials'})
+
+			# x:851 y:308
+			OperatableStateMachine.add('User Arm Control',
+										StageActionClient(topic=self.arm_control_topic),
+										transitions={'completed': 'Reset', 'failed': 'failed'},
+										autonomy={'completed': Autonomy.Off, 'failed': Autonomy.Off})
 
 			# x:670 y:421
 			OperatableStateMachine.add('Reset',

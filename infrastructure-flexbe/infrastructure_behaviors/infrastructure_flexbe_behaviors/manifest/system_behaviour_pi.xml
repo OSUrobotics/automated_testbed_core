@@ -34,6 +34,8 @@
 
 		<param type="text" name="stop_data_collection_topic" default="stop_data_collection" label="stop_data_collection_topic" hint="Sets the stop_data_collection_topic" />
 
+		<param type="text" name="arm_control_topic" default="start_arm_sequence" label="arm_control_topic" hint="Sets the arm_control_topic" />
+
 	</params>
 
 
