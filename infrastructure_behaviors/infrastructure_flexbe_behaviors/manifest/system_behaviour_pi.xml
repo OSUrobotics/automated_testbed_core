@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="System_Behaviour_Pi">
+
+	<executable package_path="infrastructure_flexbe_behaviors.system_behaviour_pi_sm" class="System_Behaviour_PiSM" />
+	<tagstring></tagstring>
+	<author>Keegan Nave</author>
+	<date>3/22/21</date>
+	<description>
+		Newest replacement behaviour for use with the raspberry Pi's. Certain states are not yet implemented fully.
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+	<params>
+
+		<param type="numeric" name="number_of_trials" default="1" label="number_of_trials" hint="Sets the number_of_trials">
+			<min value="1" />
+			<max value="100" />
+		</param>
+
+		<param type="numeric" name="number_of_tests" default="1" label="number_of_tests" hint="Sets the number_of_tests">
+			<min value="1" />
+			<max value="100" />
+		</param>
+
+		<param type="text" name="start_data_collection_topic" default="start_data_collection" label="start_data_collection_topic" hint="Sets the start_data_collection_topic" />
+
+		<param type="text" name="parameter_topic" default="set_test_parameters" label="parameter_topic" hint="Sets the parameter_topic" />
+
+		<param type="text" name="reset_topic" default="reset_hardware" label="reset_topic" hint="Sets the reset_topic" />
+
+		<param type="text" name="stop_data_collection_topic" default="stop_data_collection" label="stop_data_collection_topic" hint="Sets the stop_data_collection_topic" />
+
+		<param type="text" name="arm_control_topic" default="start_arm_sequence" label="arm_control_topic" hint="Sets the arm_control_topic" />
+
+	</params>
+
+
+</behavior>

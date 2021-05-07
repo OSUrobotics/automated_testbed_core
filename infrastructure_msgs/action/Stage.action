@@ -1,0 +1,8 @@
+#goal
+int32 start
+---
+#result
+int32 result
+---
+#feedback
+string status

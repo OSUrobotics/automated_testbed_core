@@ -1,0 +1,9 @@
+<launch>
+
+<arg name="test_name" default = "infrastructure_trial"/>
+
+<node pkg="rosbag" type="record" name="rosbag_record_sensors"
+       args="record -o $(find data_collection)/stored_data/rosbags/$(arg test_name) -e '(.*)_infsensor'"/>  
+
+</launch>
+

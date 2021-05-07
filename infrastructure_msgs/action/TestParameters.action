@@ -1,0 +1,8 @@
+#goal
+float32[] parameters
+---
+#result
+int32 result
+---
+#feedback
+string status

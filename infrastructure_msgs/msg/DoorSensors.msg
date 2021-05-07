@@ -1,0 +1,16 @@
+time current_time
+float32 tof 
+int32 fsr1
+int32 fsr2
+int32 fsr3
+int32 fsr4
+int32 fsr5
+int32 fsr6
+int32 fsr7
+int32 fsr8
+int32 fsr9
+int32 fsr10
+int32 fsr11
+int32 fsr12
+int32 fsr_contact_1
+int32 fsr_contact_2
